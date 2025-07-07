@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>ROWSPAN AND COLSPAN EXAMPLE</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+<!--The border-collapse: collapse; 
+			CSS property ensures that table borders are 
+			merged into a single border instead of having separate, spaced-out borders for each cell. This results in a cleaner 
+			and more uniform table appearance.
+			Try to replace collapse with separate-->
+            margin: 20px auto;
+        }
+        caption {
+            font-size: 1.5em;
+<!--The font-size: 1.2em; 
+			rule increases the text size within table cells (<td>) 
+			to 1.2 times the default font size. 
+			This ensures that the text inside the table is 
+			slightly larger than the base font size,
+			improving readability while maintaining a
+			balanced layout.-->
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        td {
+            border: 5px solid;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .red-border  td{
+            border-color: red;
+        }
+        .blue-border  td{
+            border-color: blue;
+        }
+</style>
+</head>
+<body>
+<table class="red-border">
+<caption>ROWSPAN</caption>
+<tr>
+<td rowspan="3">FRUIT</td>
+<td>APPLE</td>
+</tr>
+<tr>
+<td>BANANA</td>
+</tr>
+<tr>
+<td>AVOCADO</td>
+</tr>
+</table>
+<br><br><br>
+<table class="blue-border">
+<caption>COLSPAN</caption>
+<tr>
+<td colspan="3">FRUIT</td>
+</tr>
+<tr>
+<td>APPLE</td>
+<td>BANANA</td>
+<td>AVOCADO</td>
+</tr>
+</table>
+</body>
+</html>

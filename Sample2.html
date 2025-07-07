@@ -1,0 +1,112 @@
+<html >
+<head>
+<title>A Sample Ordered List</title>
+ 
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            text-align: center;
+            padding: 20px;
+        }
+ 
+        /* Paragraph Styling */
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: blue;
+        }
+ 
+        /* Headings Styling */
+        h3 {
+            font-size: 20px;
+            color: cyan;
+            margin-top: 20px;
+        }
+ 
+        /* Ordered List Styling */
+        ol {
+            padding-left: 30px;
+            margin: 10px auto;
+            width: 50%;
+            text-align: left;
+        }
+ 
+        /* Different Ordered List Styles */
+        .uppercase-letters {
+            list-style-type: upper-alpha;
+        }
+ 
+        .lowercase-letters {
+            list-style-type: lower-alpha;
+        }
+ 
+        .uppercase-roman {
+            list-style-type: upper-roman;
+        }
+ 
+        .lowercase-roman {
+            list-style-type: lower-roman;
+        }
+ 
+        .arabic-numbers {
+            list-style-type: decimal;
+        }
+ 
+        .nested-list {
+            padding-left: 30px;
+        }
+</style>
+</head>
+<body>
+ 
+    <p>ORDERED LISTS CAN BE VERY SIMPLE</p>
+ 
+    <h3>Ordered List Using Uppercase Letters</h3>
+<ol class="uppercase-letters">
+<li>ITEM 1</li>
+<li>ITEM 2</li>
+<li>ITEM 3</li>
+</ol>
+ 
+    <h3>Ordered List Using Lowercase Letters</h3>
+<ol class="lowercase-letters">
+<li>ITEM 1</li>
+<li>ITEM 2</li>
+<li>ITEM 3</li>
+</ol>
+ 
+    <h3>Ordered List Using Uppercase Roman Numerals</h3>
+<ol class="uppercase-roman">
+<li>ITEM 1</li>
+<li>ITEM 2</li>
+<li>ITEM 3</li>
+</ol>
+ 
+    <h3>Ordered List Using Lowercase Roman Numerals</h3>
+<ol class="lowercase-roman">
+<li>ITEM 1</li>
+<li>ITEM 2</li>
+<li>ITEM 3</li>
+</ol>
+ 
+    <h3>Ordered List Using Arabic Numerals (The Default)</h3>
+<ol class="arabic-numbers">
+<li>ITEM 1</li>
+<li>ITEM 2</li>
+<li>ITEM 3</li>
+</ol>
+ 
+    <h3>Ordered List Showing Variations of Different Types</h3>
+<ol class="uppercase-letters" start="7">
+<li>THIS IS ITEM OF TYPE A</li>  <!-- G -->
+<ol class="uppercase-roman nested-list" start="3">
+<li>THIS IS ITEM OF TYPE I</li>  <!-- III -->
+</ol>
+<li>THIS IS ITEM OF TYPE A</li>  <!-- H -->
+<li>THIS IS ITEM OF TYPE A</li>  <!-- I -->
+</ol>
+ 
+</body>
+</html>

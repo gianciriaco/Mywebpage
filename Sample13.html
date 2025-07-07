@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Events Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0066cc;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding: 0 20px;
+    }
+
+    li {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"], input[type="button"], input[type="reset"], input[type="submit"] {
+      padding: 5px;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    function init() {
+      alert("Event demo loaded");
+    }
+
+    function leavingPage() {
+      alert("Leaving demo");
+    }
+  </script>
+</head>
+<body onload="init()" onunload="leavingPage()">
+
+  <h1>JavaScript Events</h1>
+
+  <form onreset="alert('FORM RESET')" onsubmit="alert('FORM SUBMIT'); return false;">
+    <ul>
+      <li>ONBLUR:
+        <input type="text" value="CLICK INTO FIELD AND THEN LEAVE" size="40" onblur="alert('LOST FOCUS')">
+      </li>
+
+      <li>ONCLICK:
+        <input type="button" value="CLICK ME!" onclick="alert('BUTTON CLICK')">
+      </li>
+
+      <li>ONCHANGE:
+        <input type="text" value="CHANGE THIS TEXT THEN LEAVE" size="40" onchange="alert('CHANGED')">
+      </li>
+
+      <li>ONDBLCLICK:
+        <input type="button" value="DOUBLE CLICK ME" ondblclick="alert('BUTTON DOUBLE CLICKED')">
+      </li>
+
+      <li>ONFOCUS:
+        <input type="text" value="CLICK INTO FIELD" onfocus="alert('GAINED FOCUS')">
+      </li>
+
+      <li>ONKEYDOWN:
+        <input type="text" value="PRESS KEY AND RELEASE SLOWLY HERE" size="40" onkeydown="alert('KEY DOWN')">
+      </li>
+
+      <li>ONKEYUP:
+        <input type="text" value="TYPE AND RELEASE" size="40" onkeyup="alert('KEY UP')">
+      </li>
+
+      <li>ONKEYPRESS:
+        <input type="text" value="TYPE HERE" size="40" onkeypress="alert('KEY PRESSED')">
+      </li>
+
+      <li>ONMOUSEDOWN:
+        <input type="button" value="CLICK AND HOLD" onmousedown="alert('MOUSE DOWN')">
+      </li>
+
+      <li>ONMOUSEMOVE: MOVE MOUSE OVER THIS
+        <a href="#" onmousemove="alert('MOUSE MOVED')">LINK</a>
+      </li>
+
+      <li>ONMOUSEOVER: POSITION MOUSE OVER THIS
+        <a href="#" onmouseover="alert('MOUSE OVER')">LINK</a>
+      </li>
+
+      <li>ONMOUSEOUT: POSITION MOUSE AND MOVE MOUSE OUT
+        <a href="#" onmouseout="alert('MOUSE OUT')">HERE</a> AND NOW LEAVE.
+      </li>
+
+      <li>ONMOUSEUP:
+        <input type="button" value="CLICK AND RELEASE" onmouseup="alert('MOUSE UP')">
+      </li>
+
+      <li>ONRESET:
+        <input type="reset" value="RESET DEMO">
+      </li>
+
+      <li>ONSUBMIT:
+        <input type="submit" value="TEST SUBMIT">
+      </li>
+
+      <li>ONLOAD: ALERT PRESENTED ON INITIAL DOCUMENT LOAD.</li>
+
+      <li>ONUNLOAD: TRY TO LEAVE DOCUMENT BY FOLLOWING THIS
+        <a href="http://www.pup.edu.ph" target="_blank">LINK</a>
+      </li>
+    </ul>
+  </form>
+</body>
+</html>

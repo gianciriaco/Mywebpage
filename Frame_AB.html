@@ -1,0 +1,38 @@
+<!--FILENAME: css_FRAMES_ROWS.HTML-->
+<html>
+<head>
+  <title>Sample Frame</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    .frame-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .frame-a, .frame-b {
+      height: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame-container">
+    <iframe src="Frame_A.HTML" class="frame-a"></iframe>
+    <iframe src="Frame_B.HTML" class="frame-b"></iframe>
+  </div>
+</body>
+</html>

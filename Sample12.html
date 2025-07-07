@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: gray;
+      margin: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: blue;
+    }
+
+    form {
+      width: 60%;
+      margin: 0 auto;
+      background-color: silver;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    fieldset {
+      border: 2px solid black;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: black;
+      font-size: 1.2em;
+    }
+
+    label, b {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    input[type="submit"],
+    input[type="reset"],
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      margin-right: 10px;
+      border: none;
+      background-color: gray;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    button:hover {
+      background-color: blue;
+    }
+
+    input[type="image"] {
+      margin-top: 20px;
+      width: 40px;
+      height: 40px;
+    }
+
+    button img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>STUDENT FORM</h1>
+
+  <form action="http://www.pup.edu.ph" method="post">
+    <fieldset>
+      <legend>Student Identification</legend>
+
+      <label for="studname"><b>Student Name:</b></label>
+      <input type="text" id="studname" name="studname" size="25">
+
+      <label for="studid"><b>Student ID:</b></label>
+      <input type="password" id="studid" name="studid" size="8" maxlength="8">
+
+      <label><b>Please fill in your comments here:</b></label>
+      <textarea rows="5" cols="60" name="comments"></textarea>
+
+      <label><b>Course:</b></label>
+      <select name="Department">
+        <option selected disabled>Course</option>
+        <option value="acc">Accounting</option>
+        <option value="it">I.T.</option>
+        <option value="mk">Marketing</option>
+        <option value="mg">Management</option>
+        <option value="ph">Philosophy</option>
+        <option value="eco">Economics</option>
+        <option value="none">NONE</option>
+      </select>
+
+      <label><b>Status:</b></label>
+      <label><input type="checkbox" name="status" value="Regular">Regular</label>
+      <label><input type="checkbox" name="status" value="Irregular">Irregular</label>
+      <label><input type="checkbox" name="status" value="Probation">Probation</label>
+
+      <label><b>Year:</b></label>
+      <label><input type="radio" name="yr" value="First">First Year</label>
+      <label><input type="radio" name="yr" value="Second">Second Year</label>
+      <label><input type="radio" name="yr" value="Third">Third Year</label>
+      <label><input type="radio" name="yr" value="Fourth">Fourth Year</label>
+
+      <input type="submit" value="Submit Form" name="submitbutton">
+      <input type="reset" value="Reset Form" name="resetbutton">
+
+    </fieldset>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Linking and Addressing</title>
+ 
+    <!-- Internal CSS -->
+<style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: gray;
+            text-align: center;
+            padding: 20px;
+        }
+ 
+        /* Styling for Links */
+        a:link {
+            color: red; /* Default link color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        } /*This applies to links that have not been 
+		visited by the user.*/
+ 
+        /* Visited Link */
+        a:visited {
+            color: yellow;
+        } /*This applies to links that 
+		have already been clicked and visited by the user.*/
+ 
+        /* Hover Effect */
+        a:hover {
+            color: maroon;
+            text-decoration: underline;
+        } /*This applies when the mouse pointer is 
+		placed over a link.*/
+ 
+        /* Active Link (When Clicked) */
+        a:active {
+            color: green;
+        } /*This applies to links when they 
+		are being clicked (while holding the mouse button).*/
+/*Effect: When clicking on a link, 
+it turns green momentarily.*/
+        /* List Styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+ 
+        li {
+            margin: 10px;
+        }  
+</style>
+</head>
+<body>
+ 
+    <h2>Useful Links</h2>
+<ul>
+<li><a href="https://www.yahoo.com" target="_self">TEST LINK TO YAHOO!</a></li>
+<li><a href="https://www.lazada.com.ph" target="_blank">BUY AT LAZADA ONLINE</a></li>
+</ul>
+<!--the target="_blank" attribute is used in anchor (<a>) tags
+to specify that a hyperlink should open in a new tab 
+or window when clicked.-->
+</body>
+</html>

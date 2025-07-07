@@ -1,0 +1,132 @@
+<!--
+The Web protocol, HTTP, was designed to be stateless to keep 
+transactions between a browser and server brief and cut 
+down on the overhead of keeping connections open. 
+Stateless means that after a transaction takes place between the 
+browser and server, the connection is lost and neither the browser 
+nor server have any recollection of what transpired between one 
+session and the next. But as the Internet grew and people started 
+filling up shopping carts with all kinds of goodies, ordering everything 
+from groceries to music, books, prescription drugs, and even
+cars and homes, it became necessary for merchants to remember 
+what their customers purchased, their preferences, registration numbers, 
+IDs, and so on.
+A cookie is a local file used to store information, and it is persistent; 
+that is, it is maintained between browser sessions
+and remains even when the user shuts down his computer. 
+The cookie idea became very popular and is now supported 
+by all major browsers.
+Cookies can make a Web page personal and friendly, and store 
+important information about the user's language, reading, or music 
+preferences, how many times he has visited your site, track items in a 
+shopping cart, and more. But they can also be annoying, and 
+some question the security of putting unknown data on
+their hard drive.
+The built-in escape() function is used to 
+URI(Uniform Resource Identifier)
+encode the string that 
+was entered as input by the user.
+The built-in unescape() function is used to convert the URI 
+encoded string back into its original ASCII format.
+-->
+
+<html>
+<head>
+  <title>JavaScript Cookies Demo</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 50px;
+    }
+    input, button {
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Cookie Demo</h2>
+
+  <label for="username">Enter your name:</label>
+  <input type="text" id="username">
+  <button onclick="setCookie()">Set Cookie</button>
+  <button onclick="getCookie()">Get Cookie</button>
+  <button onclick="deleteCookie()">Delete Cookie</button>
+  <p id="output"></p>
+  <script>
+    //Set a cookie
+    function setCookie() {
+      let name = document.getElementById("username").value;
+      if (name === "") {
+        alert("Please enter a name.");
+        return;
+      }
+      document.cookie = "user=" + name + "; path=/; max-age=3600"; 
+// cookie expires in 1 hour
+      document.getElementById("output").innerText = 
+	  "Cookie set for user: " 
+	  + name;
+    }
+//When you access document.cookie, the browser returns 
+//all cookies as a single string, 
+//but special characters (like spaces, =, ;, %, etc.) are URL-encoded. 
+//That means:
+//A space becomes %20
+//@ becomes %40
+//= becomes %3D, etc.
+//decodeURIComponent() is a JavaScript function 
+//that reverses that encoding 
+//— it decodes the cookie string back to its human-readable form.
+    //Get a cookie
+    function getCookie() {
+      let decodedCookies = decodeURIComponent(document.cookie);
+      let cookiesArray = decodedCookies.split(';');
+      for (let i = 0; i < cookiesArray.length; i++) {
+        let cookie = cookiesArray[i].trim();
+        if (cookie.indexOf("user=") === 0) {
+          let username = cookie.substring("user=".length);
+          document.getElementById("output").innerText = "Welcome back, " + 
+		  username + "!";
+          return;
+        }
+      }
+      document.getElementById("output").innerText = "No cookie found.";
+    }
+
+    // Delete a cookie
+    function deleteCookie() {
+      document.cookie = "user=; path=/; max-age=0"; 
+	  // max-age=0 deletes it
+      document.getElementById("output").innerText = "Cookie deleted.";
+    }
+  </script>
+</body>
+</html>
+
+<!--
+Why it doesn't work when you just double-click the file (file:///):
+Modern browsers (like Chrome, Firefox, Edge) 
+restrict cookie usage for local files opened with the file:/// 
+protocol due to security reasons.
+Cookies only work properly over:
+1. http:// or https://
+2. Local web servers (like localhost)
+Solution:
+A. Use Live Server in VS Code
+1. Install the Live Server extension in Visual Studio Code.
+2. Right-click your HTML file.
+3. Click “Open with Live Server.”
+4. It will open in a browser like:
+http://127.0.0.1:5500/yourfile.html
+5. Try your code.
+
+B. If you have Python installed
+1. Open the folder where your HTML file is located.
+2. Open a terminal or command prompt in that folder.
+3. Run:
+python -m http.server
+4. In your browser, go to:
+http://localhost:8000
+5. Click Set Cookie, then Get Cookie
+-->

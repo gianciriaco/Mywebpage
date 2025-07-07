@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>A Sample Unordered List</title>
+<style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: cyan;
+            text-align: center;
+            padding: 20px; <!--→ Adds space around the page.-->
+        }
+ 
+        /* Paragraph Styling */
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: gray;
+        }
+ 
+        /* Headings Styling */
+        h1 {
+            font-size: 22px;
+            color: blue;
+            margin-top: 20px; <!--Adds spacing above each heading.-->
+        }
+ 
+        /* List Styling */
+        ul {
+            list-style-position: inside;<!--Aligns bullets inside the list area.-->
+            padding: 0;<!-- Removes extra spacing inside lists.-->
+            margin: 10px auto;<!--Adds vertical spacing and centers the list.-->
+            width: 50%;
+            text-align: left;
+        }
+ 
+        /* Different List Types */
+        .circle-list {
+            list-style-type: circle;
+        }
+ 
+        .square-list {
+            list-style-type: square;
+        }
+ 
+        .disc-list {
+            list-style-type: disc; /* Default */
+        }
+ 
+        /* Nested List Styling */
+        .nested-list {
+            padding-left: 30px;<!--Adds indentation for nested lists.-->
+        }
+</style>
+</head>
+<body>
+ 
+    <p>UNORDERED LISTS CAN BE VERY SIMPLE</p>
+ 
+    <h1>UNORDERED LIST USING CIRCLE</h1>
+<ul class="circle-list">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+ 
+    <h1>UNORDERED LIST USING SQUARE</h1>
+<ul class="square-list">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+ 
+    <h1>UNORDERED LIST USING DISC</h1>
+<ul class="disc-list">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+ 
+    <h1>UNORDERED LISTS CAN BE NESTED</h1>
+<ul class="circle-list">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+<ul class="square-list nested-list">
+<li>Item 4</li>
+<li>Item 5</li>
+</ul>
+<li>Item 6</li>
+<li>Item 7</li>
+<ul class="disc-list nested-list">
+<li>Item 8</li>
+<li>Item 9</li>
+</ul>
+</ul>
+ 
+</body>
+</html>

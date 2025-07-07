@@ -1,0 +1,148 @@
+<!--javascriptstringfunctions.html-->
+<!--
+1) JavaScript String charAt(index) Method
+-returns the character at the given index.
+-->
+<script>  
+document.write("<h1>JAVASCRIPT FUNCTIONS</h1>")
+str="javascript"
+document.write(str.charAt(2));  //v
+</script>  
+ 
+<!--2) JavaScript String concat(str) Method
+concatenates or joins two strings.-->
+ 
+<script>  
+document.write("<br>")
+s1="sintang " 
+s2="paaralan"  
+s3=s1.concat(s2)  
+document.write(s3) // sintang paaralan 
+</script>  
+ 
+ 
+<!--3) JavaScript String indexOf(str) Method
+-returns the index position of the given string.
+-returns -1 if string is not found-->
+<script>  
+document.write("<br>")
+s1="pup from pup"; 
+  //   0123456789 
+n=s1.indexOf("pup");  //0
+document.write(n);  
+</script>
+ 
+<!--4)JavaScript String lastIndexOf(str,value) Method
+-returns the last index position of the given string.-->
+ 
+<script>  
+document.write("<br>")
+s1="pup from pup indexof";  
+//    0123456789
+n=s1.lastIndexOf("pup");  //9
+document.write(n);  
+</script>    
+ 
+<!--5)JavaScript String toLowerCase() Method
+-returns the given string in lowercase letters. -->
+ 
+<script>  
+document.write("<br>")
+s1="JavaScript toLowerCase Example";  
+s2=s1.toLowerCase();  
+document.write(s2);  
+</script>  
+ 
+<!--6)JavaScript String toUpperCase() Method
+-returns the given string in uppercase letters.-->
+ 
+<script>  
+document.write("<br>")
+var s1="JavaScript toUpperCase Example";  
+var s2=s1.toUpperCase();  
+document.write(s2);  
+</script>  
+ 
+<!--7) JavaScript String slice(beginIndex, endIndex) Method
+-method returns the parts of string 
+from given beginIndex to endIndex. 
+In slice() method, 
+beginIndex is inclusive and endIndex is exclusive.-->
+ 
+<script>  
+document.write("<br>")
+s1="abcdefgh";  
+   //   01234567
+//      12345678
+s2=s1.slice(2,5);  //cde
+document.write(s2);  
+</script>  
+ 
+<!--8) JavaScript String trim() Method
+-removes leading and trailing whitespaces from the string.-->
+<script>  
+document.write("<br>")
+s1="                 javascript trim"
+document.write(s1)
+s2=s1.trim()  
+document.write("<br>")
+document.write(s2);  
+</script>  
+ 
+<!--9) JavaScript String split() Method
+-splits a string into substring array, 
+then returns that newly created array.-->
+<script>  
+document.write("<br>")
+str="This is PUP website";  
+document.write(str.split(" ")); //splits the given string.  
+</script>  
+ 
+ 
+<!--10) JavaScript String substr() Method
+-returns the characters in a string beginning at “start” 
+and through the specified number of characters, 
+“length”. “Length” is optional, and if omitted, 
+up to the end of the string is assumed.-->
+<script>
+document.write("<br>")
+s1="PUP Paranaque"
+     //  012345
+	 //  123456789
+document.write(s1.substr(1,5)) //UP Pa
+</script>
+<!--11) Javascript String replace() method
+-replaces a given string with the specified replacement.-->
+<script>
+document.write("<br>")
+s1="I Love IT 2-2!!"
+document.write(s1.replace('Love','Hate More')) // I Hate More IT 2-2!!!
+</script>
+<!--12) Javascript String search() method
+-searches a specified regular expression in a given string 
+and returns its position if a match occurs or -1 if not found.-->
+<script>
+document.write("<br>")
+s1="I Love IT 2-2!!!"
+    //  0123456789
+document.write(s1.search('Love'))//2
+</script>
+<!--13) Javascript String match() method
+-searches a specified regular expression in a given string 
+and returns that regular expression if a match occurs 
+or null if not found.-->
+<script>
+document.write("<br>")
+s1="I Love IT 2-2!!!"
+document.write(s1.match('Hate')) <!--outputs null
+document.write("<br>")
+document.write(s1.match('Love')) <!--outputs Love
+</script>
+<!--13) Javascript String length() method
+-returns the total number of characters in the string.-->
+<script>
+document.write("<br>")
+s1="I Love IT 2-2!!!"
+document.write(s1.length) <!--outputs 16
+document.write('<br>')
+</script>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>SAMPLE MARQUEE</title>
+<style>
+        /* Styling for body */
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        /* Styling for marquee */
+        .marquee-text {
+            font-size: 2em; /* Increases text size */
+            font-family: Arial, sans-serif;
+            color: yellow; /* Text color */
+            background-color: maroon; /* Background color of marquee */
+            padding: 20px;
+            display: inline-block;
+            width: 75%; /* 75% width of the container */
+            height: 200px; /* Height of the marquee */
+        }
+</style>
+</head>
+<body>
+<marquee 
+        behavior=scroll
+       direction=down
+        scrollamount=50
+		Numeric (default: 6)
+        scrolldelay=200
+        style="background-color: maroon; height: 200px; width: 75%;">
+<span class="marquee-text">I LOVE IT 2-2!!! </span>
+</marquee>
+</body>
+</html>
+<!scrollamount	Controls how fast the marquee scrolls (higher value = faster speed).	
+Numeric (default: 6)-->

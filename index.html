@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gian Ciriaco - Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #ff5722;
+      --secondary: #4caf50;
+      --accent: #ffc107;
+      --dark: #212121;
+      --light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+    }
+
+    .login-box {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      width: 300px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-box button {
+      width: 100%;
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-box button:hover {
+      background-color: #e64a19;
+    }
+
+    .error-message {
+      color: red;
+      margin-bottom: 1rem;
+      display: none;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-container {
+      display: none;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .nav-link {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .personal-card,
+    .clock-card {
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+
+    .personal-card {
+      background-color: #e6f4ea;
+      color: #234c2a;
+      font-size: 1.1rem;
+    }
+
+    .clock-card {
+      background-color: #fff9e6;
+      color: #5c4500;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #clock {
+      font-size: 2rem;
+      color: #d32f2f;
+      margin: 1rem auto 0;
+      border: none;
+      background: none;
+      text-align: center;
+      display: block;
+    }
+
+    .project-link {
+      display: block;
+      text-align: center;
+      padding: 0.75rem;
+      background-color: #2196f3;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .project-link:hover {
+      background-color: #1976d2;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      color: var(--primary);
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div class="login-container" id="loginPage">
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+      <div class="error-message" id="passwordError">Invalid credentials</div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- PORTFOLIO PAGE -->
+<div class="portfolio-container" id="portfolioPage">
+  <nav>
+    <h2 style="color: var(--primary);">Gian's Portfolio</h2>
+    <div>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#" id="logoutBtn" class="nav-link">Logout</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <img src="gian.jpg" alt="Profile Picture" class="profile-pic">
+    <div>
+      <h1>Hello, I'm <span style="color: var(--accent);">Gian Ciriaco</span></h1>
+      <p>BSIT Student from PUP Paranaque</p>
+    </div>
+  </div>
+
+  <section id="about" class="grid-2">
+    <div class="personal-card">
+      <h3>Personal Info</h3>
+      <p><strong>Name:</strong> Gian Ciriaco</p>
+      <p><strong>Age:</strong> 20</p>
+      <p><strong>Location:</strong> Pasay City</p>
+      <p><strong>Email:</strong> gianciriaco70@gmail.com</p>
+
+      <div class="social-icons">
+        <a href="https://github.com/gianciriaco" target="_blank" title="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.facebook.com/gian.ciriaco.22/" target="_blank" title="Facebook">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="clock-card">
+      <h3>Current Time</h3>
+      <input type="text" id="clock" readonly>
+    </div>
+  </section>
+
+  <section id="projects" style="margin-top: 2rem;">
+    <h2 style="text-align:center;">My Projects</h2>
+    <div class="grid-2" style="margin-top:1rem;">
+      <a href="Frame_A.html" class="project-link" target="_blank">Frame A</a>
+      <a href="Frame_B.html" class="project-link" target="_blank">Frame B</a>
+      <a href="Frame_AB.html" class="project-link" target="_blank">Frame A and B</a>
+      <a href="Sample1.html" class="project-link" target="_blank">Unordered Lists</a>
+      <a href="Sample2.html" class="project-link" target="_blank">Ordered Lists</a>
+      <a href="Sample3.html" class="project-link" target="_blank">Sample Marquee</a>
+      <a href="Sample4.html" class="project-link" target="_blank">Fruit Table</a>
+      <a href="Sample5.html" class="project-link" target="_blank">Rowspan & Colspan</a>
+      <a href="Sample6.html" class="project-link" target="_blank">Definition List</a>
+      <a href="Sample10.html" class="project-link" target="_blank">Poetry Selections</a>
+      <a href="Sample12.html" class="project-link" target="_blank">Student Form</a>
+      <a href="Sample13.html" class="project-link" target="_blank">JS Events Demo</a>
+      <a href="Sample14.html" class="project-link" target="_blank">I LOVE YOU</a>
+      <a href="Sample16.html" class="project-link" target="_blank">JS Numeric Functions</a>
+      <a href="Sample17.html" class="project-link" target="_blank">JAVASCRIPT FUNCTIONS</a>
+    </div>
+  </section>
+</div>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    const period = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    document.getElementById('clock').value =
+      `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')} ${period}`;
+  }
+
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorBox = document.getElementById('passwordError');
+
+    const validEmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    if (!validEmail.test(username)) {
+      errorBox.textContent = "Use a valid Gmail address (e.g., name@gmail.com)";
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    if (username === "gian@gmail.com" && password === "gian") {
+      errorBox.style.display = 'none';
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('portfolioPage').style.display = 'block';
+      localStorage.setItem('isLoggedIn', 'true');
+    } else {
+      errorBox.textContent = "Incorrect username or password";
+      errorBox.style.display = 'block';
+    }
+  });
+
+  document.getElementById('logoutBtn').addEventListener('click', function () {
+    document.getElementById('portfolioPage').style.display = 'none';
+    document.getElementById('loginPage').style.display = 'flex';
+    document.getElementById('loginForm').reset();
+    document.getElementById('passwordError').style.display = 'none';
+    localStorage.removeItem('isLoggedIn');
+  });
+
+  window.addEventListener('load', function () {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      document.getElementById('loginPage').style.display = 'none';
+      document.getElementById('portfolioPage').style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>

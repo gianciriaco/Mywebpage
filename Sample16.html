@@ -1,0 +1,68 @@
+<!DOCTYPE html> <!-- Declares the document as HTML5 -->
+<html> <!-- Root element of the HTML document -->
+
+<head>
+  <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 -->
+  <title>JavaScript Numeric Functions</title> <!-- Title shown in browser tab -->
+
+  <script>
+    // Function to perform various numeric operations
+    function showResults() {
+      // Ask the user to enter a number with a decimal
+      let num1 = prompt("Enter a number with decimal (e.g. 12.34):", "12.34");
+
+      // Convert the input string to a floating-point number
+      let floatNum = parseFloat(num1);
+
+      // Convert the input string to an integer (removes decimal)
+      let intNum = parseInt(num1);
+
+      // Round the number to the nearest whole number
+      let rounded = Math.round(floatNum);
+
+      // Round the number down (floor)
+      let floor = Math.floor(floatNum);
+
+      // Round the number up (ceiling)
+      let ceil = Math.ceil(floatNum);
+
+      // Keep only 2 decimal places
+      let fixed = floatNum.toFixed(2); // returns a string
+
+      // Get the square root of the number
+      let squareRoot = Math.sqrt(floatNum);
+
+      // Raise the number to the power of 2 (square it)
+      let power = Math.pow(floatNum, 2);
+
+      // Generate a random number between 0 and 1
+      let random = Math.random();
+
+      // Create a message with all the results
+      let result =
+        "Original input: " + num1 + "\n" +
+        "parseFloat: " + floatNum + "\n" +
+        "parseInt: " + intNum + "\n" +
+        "toFixed(2): " + fixed + "\n" +
+        "Math.round: " + rounded + "\n" +
+        "Math.floor: " + floor + "\n" +
+        "Math.ceil: " + ceil + "\n" +
+        "Math.sqrt: " + squareRoot.toFixed(2) + "\n" +
+        "Math.pow (squared): " + power + "\n" +
+        "Math.random (0-1): " + random.toFixed(4);
+
+      // Show the result using an alert box
+      alert(result);
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Main heading of the webpage -->
+  <h1>JavaScript Numeric Functions Demo</h1>
+
+  <!-- Button that runs the showResults() function when clicked -->
+  <button onclick="showResults()">Try It</button>
+</body>
+
+</html>
